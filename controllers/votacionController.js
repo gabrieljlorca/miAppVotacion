@@ -1,17 +1,37 @@
-const Votacion = require('../models/Votacion');
+const Votacion = require('../models/Votacion'); // Asumiendo que tienes un modelo llamado Votacion
 
-const votacionController = {
-    getVotaciones: async (req, res) => {
-        try {
-            const votaciones = await Votacion.find();
-            res.json(votaciones);
-        } catch (error) {
-            res.status(500).json({ error: error.message });
-        }
-    },
-
-    // Otros controladores para las demás operaciones CRUD
-    // createVotacion, getVotacion, updateVotacion, deleteVotacion
+// Obtener todos los votos
+exports.obtenerVotos = async (req, res) => {
+    // TODO: Verificar autenticación antes de continuar.
+    try {
+        const votos = await Votacion.find();
+        res.json(votos);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Hubo un error al obtener los votos');
+    }
 };
 
-module.exports = votacionController;
+// Registrar un voto
+exports.registrarVoto = async (req, res) => {
+    // TODO: Verificar autenticación y que el socio no haya votado previamente.
+    try {
+        const { cedula, votoGrupo1, votoGrupo2 } = req.body;
+
+        // Verificar si el usuario ya votó
+        const votoPrevio = await Votacion.findOne({ cedula });
+        if (votoPrevio) {
+            return res.status(400).send('El socio ya ha votado');
+        }
+
+        const nuevoVoto = new Votacion({ cedula, votoGrupo1, votoGrupo2 });
+        await nuevoVoto.save();
+
+        res.json({ msg: 'Voto registrado con éxito' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Hubo un error al registrar el voto');
+    }
+};
+
+// Aquí puedo continuar agregando más funciones según las necesidades de la aplicación.

@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
-
-// Importa el controlador de votación
 const votacionController = require('../controllers/votacionController');
 
-// Define las rutas para las operaciones CRUD
-router.get('/votaciones', votacionController.getVotaciones);
-router.post('/votaciones', votacionController.createVotacion);
-router.get('/votaciones/:id', votacionController.getVotacion);
-router.put('/votaciones/:id', votacionController.updateVotacion);
-router.delete('/votaciones/:id', votacionController.deleteVotacion);
+// TODO: Agregar middleware de autenticación aquí antes de obtener los votos.
+// Ruta para obtener todos los votos
+router.get('/votos', votacionController.obtenerVotos);
+
+// TODO: Agregar middleware de autenticación aquí antes de permitir votar.
+// Ruta para registrar un voto
+router.post('/votar', votacionController.registrarVoto);
+
+// Aquí puedes continuar agregando más rutas según las necesidades de tu aplicación.
 
 module.exports = router;

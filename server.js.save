@@ -11,10 +11,7 @@ const MONGODB_URI = 'mongodb://127.0.0.1:27017/votacionDB';
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    server: {
-        reconnectTries: Number.MAX_VALUE,
-        reconnectInterval: 1000
-    }
+    autoReconnect: true
 }).then(() => {
     console.log('Conectado a MongoDB');
 }).catch(err => {
