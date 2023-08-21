@@ -5,16 +5,14 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const votacionRoutes = require('./routes/votacionRoutes');
 
-const MONGODB_URI = 'mongodb://127.0.0.1:27017/votacionDB';
+require('dotenv').config();
+
+const MONGODB_URI = `mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@127.0.0.1:27017/votacionDB`;
 
 // Conexión a MongoDB con reintentos y manejo de eventos
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    server: {
-        reconnectTries: Number.MAX_VALUE,
-        reconnectInterval: 1000
-    }
 }).then(() => {
     console.log('Conectado a MongoDB');
 }).catch(err => {
