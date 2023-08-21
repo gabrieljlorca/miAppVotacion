@@ -7,7 +7,9 @@ const votacionRoutes = require('./routes/votacionRoutes');
 
 require('dotenv').config();
 
-const MONGODB_URI = `mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@127.0.0.1:27017/votacionDB`;
+const MONGODB_URI = 'mongodb://adminUser:Funapofa2023@10.194.0.2:27017/votacionDB';
+
+console.log('Credenciales de MongoDB:', MONGODB_URI);
 
 // Conexión a MongoDB con reintentos y manejo de eventos
 mongoose.connect(MONGODB_URI, {
