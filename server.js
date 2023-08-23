@@ -1,3 +1,5 @@
+require('dotenv').config();
+console.log(process.env.MONGODB_URI);
 const express = require('express');
 const app = express();
 const PORT = 3000;
@@ -5,11 +7,7 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const votacionRoutes = require('./routes/votacionRoutes');
 
-require('dotenv').config();
-
-const MONGODB_URI = 'mongodb://adminUser:Funapofa2023@10.194.0.2:27017/votacionDB';
-
-console.log('Credenciales de MongoDB:', MONGODB_URI);
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Conexión a MongoDB con reintentos y manejo de eventos
 mongoose.connect(MONGODB_URI, {
