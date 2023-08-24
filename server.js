@@ -1,5 +1,3 @@
-require('dotenv').config();
-console.log(process.env.MONGODB_URI);
 const express = require('express');
 const app = express();
 const PORT = 3000;
@@ -7,7 +5,8 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const votacionRoutes = require('./routes/votacionRoutes');
 
-const MONGODB_URI = process.env.MONGODB_URI;
+// URI de MongoDB directamente en el código (se cambará antes de entrar a producción)
+const MONGODB_URI = "mongodb://Corpmontpubli:elecciones2023@10.194.0.2:27017/testDB";
 
 // Conexión a MongoDB con reintentos y manejo de eventos
 mongoose.connect(MONGODB_URI, {
@@ -41,6 +40,8 @@ app.get('/', (req, res) => {
 
 // Usar las rutas de votación
 app.use('/api/votacion', votacionRoutes);
+
+// TODO: Considerar agregar más middlewares para el manejo de errores o la validación de datos.
 
 app.listen(PORT, () => {
     console.log(`Servidor en marcha en http://0.0.0.0:${PORT}`);
