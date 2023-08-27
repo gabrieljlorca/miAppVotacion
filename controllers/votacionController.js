@@ -1,37 +1,57 @@
-const Votacion = require('../models/Votacion'); // Asumiendo que tienes un modelo llamado Votacion
+const Votacion = require('../models/Votacion');
 
-// Obtener todos los votos
-exports.obtenerVotos = async (req, res) => {
-    // TODO: Verificar autenticación antes de continuar.
-    try {
-        const votos = await Votacion.find();
-        res.json(votos);
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Hubo un error al obtener los votos');
-    }
-};
-
-// Registrar un voto
+// Función para registrar un voto
 exports.registrarVoto = async (req, res) => {
-    // TODO: Verificar autenticación y que el socio no haya votado previamente.
-    try {
-        const { cedula, votoGrupo1, votoGrupo2 } = req.body;
+  const { votoGrupo1, votoGrupo2 } = req.body;
 
-        // Verificar si el usuario ya votó
-        const votoPrevio = await Votacion.findOne({ cedula });
-        if (votoPrevio) {
-            return res.status(400).send('El socio ya ha votado');
-        }
+  try {
+    console.log('Datos recibidos:', votoGrupo1, votoGrupo2);
 
-        const nuevoVoto = new Votacion({ cedula, votoGrupo1, votoGrupo2 });
-        await nuevoVoto.save();
+    const nuevoVoto = new Votacion({
+      votoGrupo1,
+      votoGrupo2
+    });
 
-        res.json({ msg: 'Voto registrado con éxito' });
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Hubo un error al registrar el voto');
-    }
+    await nuevoVoto.save();
+    res.status(201).json({ message: 'Voto registrado con éxito' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error al registrar el voto' });
+  }
 };
 
-// Aquí puedo continuar agregando más funciones según las necesidades de la aplicación.
+// Función para obtener los resultados de la votación
+exports.obtenerResultados = async (req, res) => {
+  try {
+    console.log('Antes de buscar votos');
+    const votos = await Votacion.find(); // Obtener todos los documentos de votación
+    console.log('Después de buscar votos');
+
+    let resultados = {
+      votoGrupo1: {},
+      votoGrupo2: {}
+    };
+
+    // Contar los votos para votoGrupo1
+    votos.forEach(voto => {
+      if (!resultados.votoGrupo1[voto.votoGrupo1]) {
+        resultados.votoGrupo1[voto.votoGrupo1] = 1;
+      } else {
+        resultados.votoGrupo1[voto.votoGrupo1]++;
+      }
+    });
+
+    // Contar los votos para votoGrupo2
+    votos.forEach(voto => {
+      if (!resultados.votoGrupo2[voto.votoGrupo2]) {
+        resultados.votoGrupo2[voto.votoGrupo2] = 1;
+      } else {
+        resultados.votoGrupo2[voto.votoGrupo2]++;
+      }
+    });
+
+    res.status(200).json(resultados); // Enviar resultados como respuesta
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error al obtener los resultados' });
+  }
+};

@@ -1,0 +1,195 @@
+// candidateData.js
+
+export const directorioCandidates = [
+  {
+    id: 1,
+    name: 'LISTA 1',
+    logo: 'colocar', // URL del logo
+    buttonColor: '#800E13',
+    members: [
+      {
+        name: 'LAPO LÓPEZ HOLGER PIO',
+        role: 'PRESIDENTE',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'PACHECO ALVARADO MILTON JAVIER',
+        role: 'VICEPRESIDENTE',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'JIMÉNEZ JIMÉNEZ EDGAR PATRICIO',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'CURIPOMA SINCHE MEDARDO ÁNGEL',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'ROCHINA MANOBANDA ÁNGEL GERARDO',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'AVELLANEDA CORDOVILLA DIEGO GEOVANNY',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'YANCHAGUANO CARRILLO SEGUNDO ERNESTO',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'RÍOS LUIS MARIO',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'CABEZAS SHUGULI GUSTAVO FERNANDO',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: 'LISTA 2',
+    logo: 'colocar', // URL del logo para Lista 2
+    buttonColor: '#800E13',
+    members: [
+      {
+        name: 'FERNANDEZ MENA PATRICIO',
+        role: 'PRESIDENTE',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'CARRION CUENCA MÁXIMO FLORIL',
+        role: 'VICEPRESIDENTE',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'TORRES RAMIRO PATRICIO',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'MANJARRES CHAMORRO HONORIO ROGELIO',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'GARCIA PALACIOS JAIME LISTHER',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'GUEVARA OROZCO JUAN ALBERTO',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'GUAMÁN MARÍA JESÚS',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'CUENCA PACCHA FAUSTO RENE',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'APONTE BERECHE JAIME BOLIVAR',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: 'LISTA 3',
+    logo: 'colocar', // URL del logo para Lista 3
+    buttonColor: '#800E13',
+    members: [
+      {
+        name: 'VERA CAMPELO GUIDO HERNAN',
+        role: 'PRESIDENTE',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'LUZON MACAS NORMAN MARCELO',
+        role: 'VICEPRESIDENTE',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'REYES MOREIRA CARLOS ALBERTO',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'CRUZ SANUNGA LUIS RODRIGO',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'BAÑOS FIALLOS WASHINGTON MARCELO',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'BRIONES CARLOS ENRIQUE',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'PEÑAFIEL BRAVO MARCO BERNABE',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'OBREGON GALARZA MERCEDES CLOTILDE',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+      {
+        name: 'RODRÍGUEZ PATINO LENIN JAVIER',
+        role: 'VOCAL PRINCIPAL',
+        imageUrl: 'colocar' // URL de la imagen
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: 'VOTO BLANCO',
+    logo: '', // No se necesita logo
+    buttonColor: '#FFFFFF', // Color blanco para el botón de voto blanco
+    members: [],
+  },
+  {
+    id: 5,
+    name: 'VOTO NULO',
+    logo: '', // No se necesita logo
+    buttonColor: '#CCCCCC', // Color gris claro para el botón de voto nulo
+    members: [],
+  },
+];
+
+export const comiteCandidates = [
+  {
+    id: 1,
+    name: 'C-V LISTA 1',
+    logo: 'ruta/al/logo1.png',
+    buttonColor: '#800E13',
+    members: [
+      {
+        name: 'Nombre del Miembro 1',
+        role: 'Cargo 1',
+        imageUrl: 'ruta/a/imagen1.png'
+      },
+      // ... más miembros
+    ],
+  },
+  // ... más candidatos para Comité de Vigilancia
+];
