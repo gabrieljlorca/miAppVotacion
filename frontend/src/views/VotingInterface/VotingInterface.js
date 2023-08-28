@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CandidateCard from '../components/CandidateCard';
 import { directorioCandidates } from './services/candidateData';
+import './VotingInterface.css';
 
 const VotingInterface = () => {
   const [selectedCandidate, setSelectedCandidate] = useState(null);
