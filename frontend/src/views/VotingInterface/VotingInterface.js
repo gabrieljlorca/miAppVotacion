@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, NavLink, Switch } from 'react-router-dom';
 import VotingGroup1 from './VotingGroup1'; // Importa el componente del primer grupo
 import VotingGroup2 from './VotingGroup2'; // Importa el componente del segundo grupo
-import AdminInterface from './AdminInterface'; // Importa el componente de la interfaz de administrador
+// import AdminInterface from './AdminInterface'; // Importa el componente de la interfaz de administrador
 import './VotingInterface.css';
 
 const VotingInterface = () => {
