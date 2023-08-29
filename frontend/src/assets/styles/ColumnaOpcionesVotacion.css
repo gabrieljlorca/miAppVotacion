@@ -1,0 +1,49 @@
+/* src/styles/ColumnaOpcionesVotacion.css */
+
+.columna-opciones {
+  background-color: #F6F6F6;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10px;
+}
+
+.logo-lista {
+  max-width: 100px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #800E13;
+}
+
+button {
+  background-color: #800E13;
+  color: #F6F6F6;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.integrante {
+  margin-top: 20px;
+}
+
+.integrante img {
+  max-width: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.integrante p {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 5px 0;
+  color: #800E13;
+  font-family: 'Nunito Sans', sans-serif;
+}

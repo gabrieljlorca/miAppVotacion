@@ -1,0 +1,46 @@
+/* Definir la fuente */
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+/* Estilos para los textos en el fondo #800E13 */
+.candidate-card h2, .candidate-card p, .candidate-card small {
+  color: #F6F6F6;
+}
+
+/* Estilos para los textos en el fondo #F6F6F6 */
+.candidate-card-light h2, .candidate-card-light p, .candidate-card-light small {
+  color: #2F353B;
+}
+
+/* Centrar el texto */
+.candidate-card h2, .candidate-card p, .candidate-card small,
+.candidate-card-light h2, .candidate-card-light p, .candidate-card-light small {
+  text-align: center;
+}
+
+/* Estilos para los títulos */
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* Color de fondo de la app */
+.app {
+  background-color: #800E13;
+}
+
+/* Color de fondo de la columna de las listas */
+.candidate-list {
+  background-color: #F6F6F6;
+}

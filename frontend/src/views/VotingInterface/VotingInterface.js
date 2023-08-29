@@ -1,41 +1,26 @@
-import React, { useState } from 'react';
-import CandidateCard from '../components/CandidateCard';
-import { directorioCandidates } from './services/candidateData';
+import React from 'react';
+import { Route, NavLink, Switch } from 'react-router-dom';
+import VotingGroup1 from './VotingGroup1'; // Importa el componente del primer grupo
+import VotingGroup2 from './VotingGroup2'; // Importa el componente del segundo grupo
+import AdminInterface from './AdminInterface'; // Importa el componente de la interfaz de administrador
 import './VotingInterface.css';
 
 const VotingInterface = () => {
-  const [selectedCandidate, setSelectedCandidate] = useState(null);
-
-  const handleVoteClick = (candidateId) => {
-    setSelectedCandidate(candidateId);
-  };
-
-  const handleConfirm = () => {
-    console.log(`Voto confirmado para el candidato ${selectedCandidate}`);
-    setSelectedCandidate(null);
-  };
-
-  const handleChangeDecision = () => {
-    setSelectedCandidate(null);
-  };
-
   return (
     <div>
       <h1>Interfaz de Votación</h1>
-      <div className="candidate-list">
-        {directorioCandidates.map((candidate) => (
-          <div key={candidate.id} onClick={() => handleVoteClick(candidate.id)}>
-            <CandidateCard {...candidate} />
-          </div>
-        ))}
-      </div>
-      {selectedCandidate && (
-        <div className="confirmation-popup">
-          <p>Su elección de Directorio ha sido LISTA {selectedCandidate}. Certifica que es la lista de tu elección y si es así, selecciona el botón 'CONFIRMAR'. Si no es así, selecciona 'CAMBIAR DECISIÓN'.</p>
-          <button onClick={handleConfirm}>CONFIRMAR</button>
-          <button onClick={handleChangeDecision}>CAMBIAR DECISIÓN</button>
-        </div>
-      )}
+      <nav>
+        <ul>
+          <li><NavLink to="/group1">Grupo 1</NavLink></li>
+          <li><NavLink to="/group2">Grupo 2</NavLink></li>
+          <li><NavLink to="/admin">Administrador</NavLink></li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route path="/group1" component={VotingGroup1} />
+        <Route path="/group2" component={VotingGroup2} />
+        <Route path="/admin" component={AdminInterface} />
+      </Switch>
     </div>
   );
 };
